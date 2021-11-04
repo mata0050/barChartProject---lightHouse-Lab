@@ -1,0 +1,11 @@
+{
+  "name": "stretch-project-1",
+  "version": "0.0.0",
+  "description": "\"This project will consist of building a library that will allow other developers to generate bar charts on their web pages using HTML, CSS and JavaScript.\"",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Matambo",
+  "license": "MIT"
+}
