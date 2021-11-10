@@ -8,7 +8,8 @@ let scaleArray = [];
 // Buttons & inputs
 const arrayInput = document.querySelector("input");
 const selectOption = document.querySelector(".option");
-const button = document.querySelector("button");
+const button = document.querySelector("#draw");
+const spaceButton = document.querySelector("#space");
 
 // main.insertAdjacentHTML('afterbegin', <p>hello</p>)
 
@@ -38,23 +39,23 @@ const scaleChart = () => {
   // scale chart
   if (largestNumber < 5) {
     inputArray.forEach((element) => {
-      scaleArray.push({color: randomColor(), item:element * 100});
+      scaleArray.push({ color: randomColor(), item: element * 100 });
     });
   } else if (largestNumber < 10) {
     inputArray.forEach((element) => {
-      scaleArray.push({color: randomColor(), item:element * 65});
+      scaleArray.push({ color: randomColor(), item: element * 65 });
     });
   } else if (largestNumber < 20) {
     inputArray.forEach((element) => {
-      scaleArray.push({color: randomColor(), item:element * 30});
+      scaleArray.push({ color: randomColor(), item: element * 30 });
     });
   } else if (largestNumber < 50) {
     inputArray.forEach((element) => {
-      scaleArray.push({color: randomColor(), item:element * 12});
+      scaleArray.push({ color: randomColor(), item: element * 12 });
     });
   } else if (largestNumber < 250) {
     inputArray.forEach((element) => {
-      scaleArray.push({color: randomColor(), item:element * 2});
+      scaleArray.push({ color: randomColor(), item: element * 2 });
     });
   }
 };
@@ -62,8 +63,9 @@ const scaleChart = () => {
 // _____________________________________________
 // Generates html for bar-chart
 // _____________________________________________
-const generateHtml = () => {
+const generateHtml = (space) => {
   let html = ``;
+  let htmlWithSpace = ``;
   let largestNumber = 0;
 
   // scale items first
@@ -79,9 +81,36 @@ const generateHtml = () => {
     }
   });
 
+  // find the largest number in the input Array
+  let inputArrayLargeNumber = 0;
+  inputArray.forEach((element) => {
+    if (parseInt(element) > inputArrayLargeNumber) {
+      inputArrayLargeNumber = element;
+    }
+  });
+
   // create html
   scaleArray.map((item) => {
-    html += `<div class='bar-${heightOrWidth}' style='${heightOrWidth}: ${item.item}px;  background-color: #${item.color};'></div>`;
+    if (space === false) {
+      html += `<div class='bar-${heightOrWidth}' style='${heightOrWidth}: ${item.item}px;  background-color: #${item.color};'></div>`;
+    } else {
+      html += `<div class='bar-${heightOrWidth}' style='${heightOrWidth}: ${
+        item.item
+      }px;  background-color: #${item.color};'></div>
+      <div style='${
+        heightOrWidth === "width" ? "height" : "width"
+      }: 10px;  background-color: white;'></div>`;
+    }
+  });
+
+  // create html with space between
+  scaleArray.map((item) => {
+    htmlWithSpace += `<div class='bar-${heightOrWidth}' style='${heightOrWidth}: ${
+      item.item
+    }px;  background-color: #${item.color};'></div>
+    <div style='${
+      heightOrWidth === "width" ? "height" : "width"
+    }: 10px;  background-color: white;'></div>`;
   });
 
   const finalHtml = `   
@@ -99,7 +128,7 @@ const generateHtml = () => {
           <span>0</span>
           <span class=${
             heightOrWidth === "width" ? "end" : "start"
-          }>${largestNumber}</span>
+          }>${inputArrayLargeNumber}</span>
 
         </div>`
       }
@@ -129,24 +158,40 @@ const errorCheck = () => {
 // generate random color
 // _____________________________________________
 const randomColor = () => {
-  const randomNumber = Math.random().toString().split('.')[1];
-  const randomColor = randomNumber.slice(0,6)
-  return randomColor
-}
-
+  const randomNumber = Math.random().toString().split(".")[1];
+  const randomColor = randomNumber.slice(0, 6);
+  return randomColor;
+};
 
 // _____________________________________________
 // Generates Chart on Click
 // _____________________________________________
 button.addEventListener("click", (event) => {
   const chart = document.getElementById("chart");
-  
+
   //remove bar chart if they is already a bar chart
   if (chart) {
     chart.remove();
     scaleArray = [];
   }
 
-  generateHtml();
+  generateHtml(false);
+  event.preventDefault();
+});
+
+// _____________________________________________
+// Generates Chart with space on Click
+// _____________________________________________
+
+spaceButton.addEventListener("click", (event) => {
+  const chart = document.getElementById("chart");
+
+  //remove bar chart if they is already a bar chart
+  if (chart) {
+    chart.remove();
+    scaleArray = [];
+  }
+
+  generateHtml(true);
   event.preventDefault();
 });
