@@ -3,7 +3,7 @@ This project will consist of building a library that will allow other developers
 
 There are intentionally no visuals provided with this project, and many aspects of the UI are left intentionally vague. We are leaving you freedom to get creative with the UI. We encourage you to make the charts look presentable and even add extra flare with things like CSS transitions and animations.
 
-##Functional Requirements
+## Functional Requirements
 You should have a simple API to draw a bar chart. The function should be used by your HTML page to render the chart into your demo page. The signature of the function should be as follows:
 
 The data parameter will be the data the chart should work from Start with just an Array of numbers
@@ -14,8 +14,8 @@ e.g. width and height of the bar chart
 
 The element parameter should be a DOM element or jQuery element that the chart will get rendered into.
 
-##Display Requirements
-###Bar Chart
+## Display Requirements
+### Bar Chart
 
 Display a list of single values, horizontally as a bar chart
 
@@ -53,7 +53,7 @@ This should also support all the features of the single bar chart, including
 * Customizable bar colours, per value
 * Customizable label colours
 
-#Example Screenshots
+# Example Screenshots
 
 ![Image](https://res.cloudinary.com/db4oy473k/image/upload/v1636513427/Bar%20Chart%20Project%20LightHouse%20Labs/Screen_Shot_2021-11-09_at_10.00.42_PM_qlsapy.png)
 
@@ -69,4 +69,4 @@ This should also support all the features of the single bar chart, including
 
 ![image](https://res.cloudinary.com/db4oy473k/image/upload/v1636513638/Bar%20Chart%20Project%20LightHouse%20Labs/Screen_Shot_2021-11-09_at_10.07.05_PM_b5vzyn.png)
 ## Error Checking message
-![image](https://res.cloudinary.com/db4oy473k/image/upload/v1636511358/Bar%20Chart%20Project%20LightHouse%20Labs/Screen_Shot_2021-11-09_at_8.58.07_PM_tu6lt4.png)
+![image](https://res.cloudinary.com/db4oy473k/image/upload/v1636513426/Bar%20Chart%20Project%20LightHouse%20Labs/Screen_Shot_2021-11-09_at_10.01.14_PM_rujblt.png)
