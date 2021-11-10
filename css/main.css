@@ -1,0 +1,235 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Roboto", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.container{
+  max-width: 1000px;
+  margin: 0px auto;
+  
+}
+
+.center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main{
+  width: 100%;
+  margin:80px auto ;
+  padding-bottom: 100px;
+}
+
+/* style the header */
+/*_____________________________________________
+  style the header 
+_______________________________________________*/
+header {
+  margin-top: 60px;
+  text-align: center;
+width: 100%;
+}
+
+h1{
+  background: #031E44;
+  color: white;
+  padding: 10px 25px;
+  font-size: 2rem;
+  border-radius: 5px;
+
+}
+
+p {
+ color: #777;
+ font-size: 1.14rem;
+ max-width: 600px;
+ margin: 20px auto;
+ 
+}
+
+/* style the input form */
+form{
+  margin-top: 10px;
+  background: #8e9dda;
+  color: white;
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.flex{
+  display: flex;
+  width: 550px;
+  justify-content: space-between;
+}
+
+h2{
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+input,
+select{
+  height: 45px;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 10px;
+}
+
+select{
+  width: 150px;
+}
+
+button{
+  height: 45px;
+  padding: 0px 25px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  background: #443799;
+  color: white;
+  border: 1px solid white;
+}
+
+button:hover{
+  background: #797CCC ;
+}
+
+label{
+  display: none;
+}
+
+/*_____________________________________________
+  style the graph 
+_______________________________________________*/
+.chart{
+  position: relative;
+}
+
+/* ------- y-axis--------- */
+.bar-height {
+  background-color: black;
+  width: 60px;
+  
+}
+
+.bar-height:first-child{
+  margin-left: 20px;
+}
+
+.chart-height {
+  display: flex;
+  align-items: flex-end;
+}
+
+
+/* ------- x-axis--------- */
+.chart-width {
+  display: flex;
+  
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bar-width {
+  background-color: black;
+  height: 60px;
+}
+
+
+/* style the axis */
+.x-axis{
+  position:relative;
+}
+
+
+span{
+  font-size: 1rem;
+}
+
+.line{
+  height: 0px;
+  border-bottom: 5px dotted #031E44;
+  margin-top: 10px;
+  /* width:400px; */
+  
+}
+
+.y-axis{
+  position: absolute;
+
+}
+
+.line-vertical{
+  height: 0px;
+  border-left: 5px dotted #031E44;
+  margin-top: 10px;
+  /* width:400px; */
+  /* background: blue; */
+  
+}
+
+.start{
+  position: absolute;
+  right: 0;
+  top: -10px;
+  }
+  
+
+.end{
+position: absolute;
+right: 0;
+}
+
+
+/*_____________________________________________
+  graph bar transition
+_______________________________________________*/
+
+@keyframes slideInFromLeft {
+  from {
+    width: 0;
+  }
+  to {
+    width: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bar-width{
+  
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+.bar-height{
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+}
+
+/*_____________________________________________
+  error message
+_______________________________________________*/
+
+
+#error{
+  background: red;
+  padding: 10px;
+  color: white;
+  width: 1000px;
+  border-radius: 5px;
+}

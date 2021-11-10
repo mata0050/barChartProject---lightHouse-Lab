@@ -1,21 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bar Chart Project</title>
-</head>
-<body>
-  <header>
-    <h1>Bar Chart Project: LightHouse Labs</h1>
-    <p>This project will consist of building a library that will allow other developers to generate bar charts on their web pages using HTML, CSS and JavaScript.</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Menu</title>
+  </head>
+  <body>
+    <div class="container">
+    <div class="center">
+      
+    <header>
+      <h1>Bar Chart Project: LightHouse Labs</h1>
+      <p>
+        This project will consist of building a library that will allow other
+        developers to generate bar charts on their web pages using HTML, CSS and
+        JavaScript.
+      </p>
+    </header>
 
-  <form action="">
-    <input type='text' value='' placeholder="Enter an a Array [1,2,3,4]"/>
-    <select/>
-  </form>
-  
-</body>
+    <form action="">
+      <h2>Draw your bar Chart</h2>
+      <!-- <input type="text" class="array" placeholder="Enter an a Array [1,2,3,4]" /> -->
+      <div class="flex">
+        <input placeholder="Enter an Array e.g 1,2,3,4" name="name" />
+
+        <label for="select">Select height or width: </label>
+        <select id="select" class="option" name="ice-cream">
+          <option value="">Select One …</option>
+          <option value="width">width</option>
+          <option value="height">height</option>
+        </select>
+
+        <button>draw...</button>
+      </div>
+    </form>
+  </div>
+    <main>
+      
+      <!-- <div id="chart" class="chart-width">
+        <div class="bar-width" style="width: 100px"></div>
+        <div class="bar-width" style="width: 200px"></div>
+        <div class="bar-width" style="width: 300px"></div>
+        <div class="bar-width" style="width: 400px"></div>
+        <div class="x-axis">
+          <div class="line" style="width: 400px"></div>
+          <span>0</span>
+          <span class='end'>400</span>
+        </div>
+      </div>  -->
+
+      <!-- <div id="chart" class="chart-height chart">
+        <div class="bar-height" style="height: 100px"></div>
+        <div class="bar-height" style="height: 200px"></div>
+        <div class="bar-height" style="height: 300px"></div>
+        <div class="bar-height" style="height: 400px"></div>
+        <div class="y-axis">
+          <div class="line-vertical" style="height: 400px"></div>
+          <span>0</span>
+          <span class='start'>400</span>
+        </div>
+      </div>  -->
+
+      <!-- <div class="chart-height">
+        <div class="bar-height" style="height: 100px"></div>
+        <div class="bar-height" style="height: 200px"></div>
+      </div> -->
+    </main>
+  </div>
+    <script src="./js/menu.js"></script>
+    <script type="module"  src="./js/index.js"></script>
+  </body>
 </html>
